@@ -1,3 +1,6 @@
+import axios from "axios";
+import SimpleLightbox from "simplelightbox";
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
 
 const refs = {
@@ -51,7 +54,7 @@ async function loadFromAPI(name, page) {
       orientation: 'horizontal',
       safesearch: 'true',
       page: page,
-      perPage: 40,
+      per_page: 40,
     },
   };
 
@@ -62,7 +65,7 @@ async function loadFromAPI(name, page) {
     message(
       response.data.hits.length,
       alreadyShown,
-      options.params.perPage,
+      options.params.per_page,
       response.data.total
     );
 
@@ -105,9 +108,10 @@ function renderGallery(picture) {
 
 const simpleLightBox = new SimpleLightbox('.gallery a', {
   captionsData: 'alt',
-  captionDelay: 250,
+  captionDelay: 150,
 });
-function message(length, alreadyShown, perPage, total) {
+
+function message(length, alreadyShown, per_page, total) {
   if (!length) {
     Notify.failure(
       'Sorry, there are no images matching your search query. Please try again.'
