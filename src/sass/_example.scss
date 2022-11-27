@@ -46,10 +46,7 @@ form{
     margin:auto; 
  }
   
-  .gallery__link{
-    display: block;
-    text-decoration: none;
-    }
+
 
   .gallery{
   display: grid;
@@ -80,4 +77,22 @@ input{
 }
   .load-but{
     text-align: center;
+  }
+
+  .info{
+    display: inline;
+  width: 550px;
+  justify-content: center;
+  padding: 0;
+  margin-left: auto;
+  margin-right: auto;
+  border: solid;
+  border-width: 1px;
+  }
+
+  .info-item{
+  display: inline-flex;
+  margin: 0;
+  padding: 3px;
+  width: 19%;
   }
