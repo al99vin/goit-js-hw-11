@@ -1,1 +1,0 @@
-{"mappings":"AAEAA,KAAO,CACHC,KAAOC,SAASC,cAAc,gBAC/BC,YAAeF,SAASC,cAAc","sources":["src/index.js"],"sourcesContent":["\n\nrefs = {\n    form : document.querySelector('#search-form'),\n   loadMoreBtn  : document.querySelector('.load-more'),\n }"],"names":["refs","form","document","querySelector","loadMoreBtn"],"version":3,"file":"index.246ae3ad.js.map"}
