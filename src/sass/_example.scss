@@ -26,3 +26,58 @@
   background-size: cover;
   background-position: center;
 }
+
+form{
+  background-color: blue;  
+  width: 100%;
+  display: inline-block;
+  margin-bottom: 20px;
+  }
+  
+  body {
+      text-align: center;
+      background-color:beige;
+  }
+
+  img{
+    display: block;
+    text-decoration: none;
+    height: 440px;
+    margin:auto; 
+ }
+  
+  .gallery__link{
+    display: block;
+    text-decoration: none;
+    }
+
+  .gallery{
+  display: grid;
+  max-width: 100%;
+  grid-template-columns: 50% repeat(auto-fill, 50%);
+  grid-auto-rows: 1fr;
+  grid-gap: 200px;
+  justify-content: center;
+  padding: 0;
+  list-style: none;
+  margin-left: auto;
+  margin-right: auto;
+  }
+
+  .load-more{
+    display: block;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    margin: 0 auto;
+  }
+
+button{
+  Border-radius: 13px;
+}
+input{
+  Border-radius: 13px;
+}
+  .load-but{
+    text-align: center;
+  }

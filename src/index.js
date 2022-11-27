@@ -77,7 +77,7 @@ async function loadFromAPI(name, page) {
 function renderGallery(picture) {
   const markup = picture.hits
     .map(
-      hit => `<a class="gallery__link" href="${hit.largeImageURL}">
+      hit => `<a class="gallery__item" href="${hit.largeImageURL}">
         <div class="photo-card">
     <img src="${hit.webformatURL}" alt="${hit.tags}" loading="lazy" />
     <div class="info">
@@ -106,9 +106,9 @@ function renderGallery(picture) {
   simpleLightBox.refresh();
 }
 
-const simpleLightBox = new SimpleLightbox('.gallery a', {
+const simpleLightBox = new SimpleLightbox('.gallery__link', {
   captionsData: 'alt',
-  captionDelay: 150,
+  captionDelay: 250,
 });
 
 function message(length, alreadyShown, per_page, total) {
