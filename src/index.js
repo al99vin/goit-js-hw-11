@@ -1,7 +1,7 @@
 import axios from "axios";
 import SimpleLightbox from "simplelightbox";
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
-
+import 'simplelightbox/dist/simple-lightbox.min.css';
 
 const refs = {
   form: document.querySelector('#search-form'),
@@ -9,6 +9,7 @@ const refs = {
   loadMore: document.querySelector('.load-more'),
 };
 
+const simpleLightBox = new SimpleLightbox('.gallery__item', {captionsData: 'alt',captionDelay: 250,});
 refs.loadMore.style.display = 'none';
 let alreadyShown = 0;
 let page = 1;
@@ -74,6 +75,9 @@ async function loadFromAPI(name, page) {
     console.log(error);
   }
 }
+
+
+
 function renderGallery(picture) {
   const markup = picture.hits
     .map(
@@ -106,10 +110,7 @@ function renderGallery(picture) {
   simpleLightBox.refresh();
 }
 
-const simpleLightBox = new SimpleLightbox('.gallery__link', {
-  captionsData: 'alt',
-  captionDelay: 250,
-});
+
 
 function message(length, alreadyShown, per_page, total) {
   if (!length) {
@@ -117,11 +118,11 @@ function message(length, alreadyShown, per_page, total) {
       'Sorry, there are no images matching your search query. Please try again.'
     );
   }
-  if (length >= alreadyShown) {
+  if (length >= alreadyShown && total!=0) {
     refs.loadMore.style.display = 'flex';
     Notify.info(`Hooray! We found ${total} images.`);
   }
-  if (alreadyShown >= total) {
+  if (alreadyShown >= total && total!=0) {
     refs.loadMore.style.display = 'none';
     Notify.info("We're sorry, but you've reached the end of search results.");
   }
