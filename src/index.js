@@ -114,9 +114,8 @@ function renderGallery(picture) {
 
 function message(length, alreadyShown, per_page, total) {
   if (!length) {
-    Notify.failure(
-      'Sorry, there are no images matching your search query. Please try again.'
-    );
+    refs.loadMore.style.display = 'none';
+    Notify.failure('Sorry, there are no images matching your search query. Please try again.');
   }
   if (length >= alreadyShown && total!=0) {
     refs.loadMore.style.display = 'flex';
